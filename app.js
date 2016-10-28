@@ -1,47 +1,22 @@
 var main = function(){
 	"use strict";
-<<<<<<< HEAD
-	var toDos = ["Finish writing this book","Take Gracie to the park","Answer emails","prep for monday class","make more todos","get groceries"];
-	var makeTabActive = function(tabNumber){
-		var tabSelector = ".tabs a:nth-child("+tabNumber+") span";
-		$(".tabs span").removeClass("active");
-		$(tabSelector).addClass("active");
-		$("main .content").empty();
-		
-	};
-
-
-	$(".tabs a:nth-child(1)").on("click", function(){
-		makeTabActive(1);
-		return false;
-	});
-	$(".tabs a:nth-child(2)").on("click", function(){
-		makeTabActive(2);
-		return false;
-	});
-	$(".tabs a:nth-child(3)").on("click", function(){
-		makeTabActive(3);
-		return false;
-=======
-	
 	var toDos = ["Finish writing this book","Take Gracie to the park","Answer emails","prep for monday class","make more todos","get groceries"];
 	$(".tabs a span").toArray().forEach(function(element){
 		$(element).on("click", function(){
 			var $element = $(element),
 			$content;
-			var n = 0;
 			$(".tabs a span").removeClass("active");
 			$element.addClass("active");
-			$("main .contents").empty();
 			
 			if($element.parent().is(":nth-child(1)")){
+				$("main .content").empty();
 				console.log("First Tab clicked!");
 				$content = $("<ul>");
-				$("main .content").empty();
-				for(n=10;n<5;n = n-1){
-					console.log(n);
-				}
+					for (var i = toDos.length - 1; i >= 0; i--) {
+						$content.append($("<li>").text(toDos[i]));
+					};
 				$("main .content").append($content);
+				return false;
 			}
 			else if($element.parent().is(":nth-child(2)")){
 				console.log("Second Tab clicked!");
@@ -52,16 +27,25 @@ var main = function(){
 				});
 				
 				$("main .content").append($content);
+				return false;
 			}
 			else if($element.parent().is(":nth-child(3)")){
-				console.log("third tab clicked!");
-				$content = $("<input>");
+				console.log("Tags tab clicked!");
+				
+				return false;
+			}
+			else if($element.parent().is(":nth-child(4)")){
+				console.log("Add tabs clicked!");
 				$("main .content").empty();
+				var $input = $("<input>"),
+				$button = $("<button>").text("+");
+				$content = $("div").append($input).append($button);
 				$("main .content").append($content);
+				return false;
 			}
 			return false;
 		});
->>>>>>> 06d3985bfbf93b8acbf327ca575eda65c510425b
+
 	});
 	$(".tabs a:first-child span").trigger("click");
 }
