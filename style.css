@@ -117,3 +117,33 @@ footer{
 	float:right;
 	padding-right: 50px;
 }
+.tabs a span{
+	display: inline-block;
+	border-radius: 5px 5px 0 0;
+	width: 100px;
+	margin-right: 10px;
+	font-weight: bold;
+	text-align: center;
+	background: #ddd;
+	padding:5px;
+}
+.tabs a span.active{
+	background: #eee;
+}
+.content{
+	background: #eee;
+	max-width: 855px;
+	font-weight: bold;
+}
+.content ul{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.content ul li{
+	background-color: white;
+	padding: 5px;
+	margin: 10px;
+}
+
