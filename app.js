@@ -31,15 +31,21 @@ var main = function(){
 			}
 			else if($element.parent().is(":nth-child(3)")){
 				console.log("Tags tab clicked!");
+				$("main .content").empty();
+				var tags = [{"name":"writing", "toDos":["finish book", "prep for class monday"]},{"name": "chores", "toDos":["Get Groceries"]}];
+				tags.
+
 				
 				return false;
 			}
 			else if($element.parent().is(":nth-child(4)")){
-				console.log("Add tabs clicked!");
+				console.log("Add tab clicked!");
 				$("main .content").empty();
+				$content = $("<ul>");
 				var $input = $("<input>"),
 				$button = $("<button>").text("+");
-				$content = $("div").append($input).append($button);
+				$input.append($button);
+				
 				$("main .content").append($content);
 				return false;
 			}
